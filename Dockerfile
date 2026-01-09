@@ -1,5 +1,5 @@
 # 多阶段构建：第一阶段 - 构建应用
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 
 WORKDIR /app
 
@@ -16,7 +16,7 @@ COPY . .
 RUN npm run build
 
 # 多阶段构建：第二阶段 - 运行应用
-FROM node:18-alpine
+FROM node:20-alpine
 
 WORKDIR /app
 
